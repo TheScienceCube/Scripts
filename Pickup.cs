@@ -7,35 +7,28 @@ public class Pickup : MonoBehaviour
     public string elementName, atomicSymbol;
     public int cashModifier;
     public int healthModifier;
-
-    public Vector2 collect(int cash, int health)
-    {
-        int newCash = cash + cashModifier;
-        int newHealth = health + healthModifier;
-        Vector2 collectVec = new Vector2(newCash, newHealth);
-        return collectVec; //
-    }
+    public Vector4 color;
 
     public class CashPickup : Pickup
     {
         public class Copper : CashPickup
         {
-            public Copper() { elementName = "Copper"; atomicSymbol = "Cu"; cashModifier = 5; healthModifier = 0; }
+            public Copper() { elementName = "Copper"; atomicSymbol = "Cu"; cashModifier = 5; healthModifier = 0; color = new Vector4(184 / 255, 115 / 255, 51 / 255, 1); }
         }
 
         public class Silver : CashPickup
         {
-            public Silver() { elementName = "Silver"; atomicSymbol = "Ag"; cashModifier = 10; healthModifier = 0; }
+            public Silver() { elementName = "Silver"; atomicSymbol = "Ag"; cashModifier = 10; healthModifier = 0; color = new Vector4(211 / 255, 211 / 255, 211 / 255, 1); }
         }
 
         public class Gold : CashPickup
         {
-            public Gold() { elementName = "Gold"; atomicSymbol = "Au"; cashModifier = 15; healthModifier = 0; }
+            public Gold() { elementName = "Gold"; atomicSymbol = "Au"; cashModifier = 15; healthModifier = 0; color = new Vector4(255 / 255, 215 / 255, 0 / 255, 1); }
         }
 
         public class Platinum : CashPickup
         {
-            public Platinum() { elementName = "Platinum"; atomicSymbol = "Pt"; cashModifier = 20; healthModifier = 0; }
+            public Platinum() { elementName = "Platinum"; atomicSymbol = "Pt"; cashModifier = 20; healthModifier = 0; color = new Vector4(229 / 255, 228 / 255, 226 / 255, 1); }
         }
     }
     public class HealthPickup : Pickup
